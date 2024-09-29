@@ -1,0 +1,43 @@
+@import './../../styles.scss';
+
+:host {
+    @include display();
+    flex-direction: column;
+    border-bottom: 1px solid lightgray;
+    filter: $shadow;
+    background-color: white;
+}
+
+.top-img {
+    height: 300px;
+    width: 100%;
+    object-fit: cover;
+}
+
+.stars {
+    width: 24px;
+    object-fit: cover;
+}
+
+.rating-box {
+    @include display($jc: flex-start);
+    gap: 4px;
+    // background-color: aliceblue;
+    height: 48px;
+}
+
+.deliver-infos {
+    @include display($jc: flex-start);
+    gap: 8px;
+    height: 48px;
+}
+
+
+.box-height {
+    height: 240px;
+    // background-color: aliceblue;
+    @include display($jc: center, $ai: flex-start);
+    flex-direction: column;
+
+}
+

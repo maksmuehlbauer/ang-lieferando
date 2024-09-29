@@ -1,4 +1,89 @@
-/* You can add global styles to this file, and also import other style files */
 
-html, body { height: 100%; }
-body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+html, body { height: 100%; box-sizing: border-box;}
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif}
+
+$main-color: #F36805;
+$main-color-hover: #fc8c3c;
+$secondary: #FFF9DF;
+$font-color: black;
+$shadow: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.1));
+
+h1 {
+    font-size: 32px;
+    color: $font-color;
+    font-weight: 600;
+    margin: 0;
+}
+
+h2 {
+    font-size: 24px;
+    color: $font-color;
+    font-weight: 600;
+    margin: 0;
+}
+
+h3 {
+    font-size: 16px;
+    color: $font-color;
+    margin: 0;
+}
+
+p {
+    font-size: 14px;
+    color: $font-color;
+}
+
+.desk-max-width {
+    max-width: 800px;
+    width: 100%;
+    // background-color: lightgray;
+}
+
+.ml-16 {
+    margin-left: 16px
+}
+
+.mb-8 {
+    margin-bottom: 8px
+}
+
+.mt-16 {
+    margin-top: 16px;
+}
+
+.p-16 {
+    padding: 16px;
+}
+
+.p-32 {
+    padding: 32px
+}
+
+.color-white {
+    color: white;
+}
+
+button {
+    background-color: $main-color;
+    font-size: 32px;
+    width: 400px;
+    border-radius: 12px;
+    border: none;
+    padding: 16px 0;
+    color: white;
+    // text-transform: uppercase;
+    &:hover {
+        background-color: $main-color-hover;
+        cursor: pointer;
+    }
+
+
+}
+
+@mixin display($flex: flex, $jc: center, $ai: center) {
+    display: $flex;
+    justify-content: $jc;
+    align-items: $ai;
+}
+
+

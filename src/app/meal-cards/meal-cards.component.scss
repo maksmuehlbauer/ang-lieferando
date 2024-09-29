@@ -1,0 +1,27 @@
+@import './../../styles.scss';
+
+:host {
+    @include display();
+    flex-direction: column;
+    // background-color: aliceblue;
+}
+
+.meal-card {
+    border: 1px solid lightgray;
+    border-radius: 12px;
+    margin: 24px;
+    filter: $shadow;
+    background-color: white;
+    position: relative;
+}
+
+.add-btn {
+    background-color: $main-color;
+    width: 64px;
+    height: 64px;
+    @include display();
+    border-radius: 100%;
+    position: absolute;
+    top: 0;
+    right: 32px;
+}

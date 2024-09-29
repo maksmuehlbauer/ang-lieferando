@@ -1,0 +1,12 @@
+@import './../styles.scss';
+
+mat-toolbar {
+    background-color: white;
+    height: 80px;
+    border-bottom: 1px solid lightgray;
+    @include display($jc: space-between);
+    filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.1));
+}
+
+
+
