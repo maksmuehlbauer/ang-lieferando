@@ -1,0 +1,32 @@
+<h1 class="mb-32">Warenkorb</h1>
+
+<div *ngFor="let meal of mealService.shoppingBasket; let index = index" class="meal-boxes mb-16">
+    <div class="default-box w-100 mb-8">
+        <h3>{{ meal.name }}</h3>
+        <h3>{{ meal.price | currency: 'EUR':'symbol':'1.2-2' }}</h3>
+    </div>
+    <div class="default-box w-100 counter-box">
+        <button class="counter-btn" (click)="mealService.switchCounter(false, index)"><mat-icon>remove</mat-icon></button>
+        <h3>{{ meal.quantity }}</h3>
+        <button class="counter-btn" (click)="mealService.switchCounter(true, index)"><mat-icon>add</mat-icon></button>
+    </div>
+
+</div>
+
+<div class="default-box mb-16">
+    <p>Benötigter Betrag, um den Mindestbestellwert zu erreichen</p>
+    <p class="flex">18,00 €</p>
+</div>
+<div class="default-box mb-16">
+    <p>Leider kannst du noch nicht bestellen. Pizzeria Casa Mia liefert erst ab einem
+        Mindestbestellwert von 18 € (exkl. Lieferkosten).</p>
+</div>
+<div class="default-box mb-8">
+    <h3>Zwischensumme</h3>
+    <h3>{{ mealService.calculateCost()| currency: 'EUR':'symbol':'1.2-2' }}</h3>
+</div>
+<div class="default-box mb-16">
+    <h3 class="f-weight">Total (incl. delivery cost)</h3>
+    <h3 class="f-weight">{{ mealService.calculateCost() + 2 | currency: 'EUR':'symbol':'1.2-2' }}</h3>
+</div>
+<button [disabled]="true" (click)="payOrder()">Pay ({{ mealService.calculateCost() + 2 | currency: 'EUR':'symbol':'1.2-2' }})</button>

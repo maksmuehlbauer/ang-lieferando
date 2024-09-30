@@ -3,6 +3,6 @@
         <h1 class="mb-8">{{ meal.name }}</h1>
         <h3 class="mb-8">{{ meal.ingridients }}</h3>
         
-        <button class="mt-16"><h2 class="color-white">{{ meal.price | currency: 'EUR':'symbol':'1.2-2' }}</h2></button>
+        <button (click)="mealService.addToBasket(meal)" class="mt-16"><h2 class="color-white">{{ meal.price | currency: 'EUR':'symbol':'1.2-2' }}</h2></button>
     </div>
 </div>

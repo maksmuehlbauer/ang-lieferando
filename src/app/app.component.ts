@@ -5,6 +5,7 @@ import { MatIconModule } from '@angular/material/icon';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { ComnpanyInformationComponent } from './comnpany-information/comnpany-information.component';
 import { MealCardsComponent } from "./meal-cards/meal-cards.component";
+import { ShoppingBasketComponent } from "./shopping-basket/shopping-basket.component";
 
 @Component({
   selector: 'app-root',
@@ -15,7 +16,8 @@ import { MealCardsComponent } from "./meal-cards/meal-cards.component";
     MatIconModule,
     MatToolbarModule,
     ComnpanyInformationComponent,
-    MealCardsComponent
+    MealCardsComponent,
+    ShoppingBasketComponent
 ],
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss'

@@ -31,6 +31,7 @@ h3 {
 p {
     font-size: 14px;
     color: $font-color;
+    margin: 0
 }
 
 .desk-max-width {
@@ -51,6 +52,14 @@ p {
     margin-top: 16px;
 }
 
+.mb-16 {
+    margin-bottom: 16px;
+}
+
+.mb-32 {
+    margin-bottom: 32px;
+}
+
 .p-16 {
     padding: 16px;
 }
@@ -61,6 +70,10 @@ p {
 
 .color-white {
     color: white;
+}
+
+.w-100 {
+    width: 100%;
 }
 
 button {
