@@ -14,6 +14,7 @@
     border-left: 1px solid lightgray;
     filter: $shadow;
     padding: 24px;
+    transition: top 250ms ease-in-out;
 }
 
 .default-box {
