@@ -14,6 +14,7 @@ interface BasketItem {
 export class MealsService {
 
     public shoppingBasket: BasketItem[] = [ ];
+    continueShopping: boolean = false
 
     constructor() { }
 
@@ -81,19 +82,33 @@ export class MealsService {
         const meal = this.shoppingBasket[index];
         if (symb) {
             meal.quantity += 1;
+        } else if (meal.quantity <= 1) {
+            this.deleteFromBasket(index)
         } else if (meal.quantity > 0) {
             meal.quantity -= 1;
         }
     }
 
 
-    calculateCost() {
+    calculateTotalCost() {
         let totalSum = 0
         for (let i = 0; i < this.shoppingBasket.length; i++) {
             const meal = this.shoppingBasket[i];
             totalSum += meal.quantity * meal.price;           
         }
         return totalSum
+    }
+
+
+    calculateItemCost(meal: BasketItem) {
+        let itemCost = meal.quantity * meal.price
+        return itemCost
+
+    }
+
+
+    deleteFromBasket(index: number) {
+        return this.shoppingBasket.splice(index, 1)
     }
 
 

@@ -1,0 +1,19 @@
+<div class="order-confirmation-box">
+    <h1 class="mb-32">Order accepted</h1>
+    <div class="deliver-infos mb-16">
+        <mat-icon>directions_bike</mat-icon>
+        <h3>about 30 Min.</h3>
+        
+    </div>
+    <h3 class="mb-32">We send you an E-Mail about the order</h3>
+    <h3 class="mb-16">Meals</h3>
+    <div class="basket">
+        @for(meal of mealsService.shoppingBasket; track $index) {
+            <div class="items-in-basket">
+                <h3>{{ meal.name }}</h3> <h3>{{ meal.quantity }}x</h3>
+            </div>
+        }
+    </div>
+
+    <button class="smaller-btn" (click)="continueShopping()">Continue shopping</button>
+</div>

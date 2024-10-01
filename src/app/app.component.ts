@@ -6,6 +6,7 @@ import { MatToolbarModule } from '@angular/material/toolbar';
 import { ComnpanyInformationComponent } from './comnpany-information/comnpany-information.component';
 import { MealCardsComponent } from "./meal-cards/meal-cards.component";
 import { ShoppingBasketComponent } from "./shopping-basket/shopping-basket.component";
+import { PayFeedbackComponent } from "./pay-feedback/pay-feedback.component";
 
 @Component({
   selector: 'app-root',
@@ -17,7 +18,8 @@ import { ShoppingBasketComponent } from "./shopping-basket/shopping-basket.compo
     MatToolbarModule,
     ComnpanyInformationComponent,
     MealCardsComponent,
-    ShoppingBasketComponent
+    ShoppingBasketComponent,
+    PayFeedbackComponent
 ],
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss'

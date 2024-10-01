@@ -54,3 +54,16 @@ button {
     justify-content: flex-end;
     gap: 16px;
 }
+
+.disable-btn-color {
+    background-color: lightgray;
+    &:hover {
+        background-color: lightgray;
+    }
+}
+
+.bg-color {
+    background-color: #fff9dfe8;
+    padding: 16px;
+    border-radius: 8px;
+} 
