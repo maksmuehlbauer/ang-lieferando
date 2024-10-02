@@ -3,10 +3,7 @@ import { CommonModule } from '@angular/common';
 import { RouterOutlet } from '@angular/router';
 import { MatIconModule } from '@angular/material/icon';
 import { MatToolbarModule } from '@angular/material/toolbar';
-import { ComnpanyInformationComponent } from './comnpany-information/comnpany-information.component';
-import { MealCardsComponent } from "./meal-cards/meal-cards.component";
-import { ShoppingBasketComponent } from "./shopping-basket/shopping-basket.component";
-import { PayFeedbackComponent } from "./pay-feedback/pay-feedback.component";
+import { MainContainerComponent } from "./main-container/main-container.component";
 
 @Component({
   selector: 'app-root',
@@ -16,10 +13,7 @@ import { PayFeedbackComponent } from "./pay-feedback/pay-feedback.component";
     RouterOutlet,
     MatIconModule,
     MatToolbarModule,
-    ComnpanyInformationComponent,
-    MealCardsComponent,
-    ShoppingBasketComponent,
-    PayFeedbackComponent
+    MainContainerComponent
 ],
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss'

@@ -14,7 +14,8 @@ interface BasketItem {
 export class MealsService {
 
     public shoppingBasket: BasketItem[] = [ ];
-    continueShopping: boolean = false
+    // continueShopping: boolean = false
+    payAccepted: boolean = false;
 
     constructor() { }
 

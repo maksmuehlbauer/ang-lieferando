@@ -35,7 +35,7 @@ p {
 }
 
 .desk-max-width {
-    max-width: 800px;
+    max-width: 1024px;
     width: 100%;
     // background-color: lightgray;
 }
@@ -98,5 +98,40 @@ button {
     justify-content: $jc;
     align-items: $ai;
 }
+
+@media (max-width: 1500px) {
+    .desk-max-width {
+        max-width: 768px;
+        width: 100%;
+    }
+}
+
+@media (max-width: 1280px) {
+    .desk-max-width {
+        max-width: 600px;
+        width: 100%;
+    }
+}
+
+@media (max-width: 1024px) {
+    .desk-max-width {
+        max-width: 500px;
+        width: 100%;
+    }
+}
+
+@media (max-width: 900px) {
+    .desk-max-width {
+        width: 90%;
+    }
+}
+
+
+
+
+
+
+
+
 
 

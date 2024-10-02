@@ -1,8 +1,8 @@
 import { Component, inject } from '@angular/core';
 import { MatIconModule } from '@angular/material/icon';
-import { MealsService } from '../meals.service';
+import { MealsService } from '../../meals.service';
 import { CommonModule } from '@angular/common';
-import { Router } from '@angular/router';
+
 
 @Component({
   selector: 'app-pay-feedback',
@@ -16,13 +16,15 @@ import { Router } from '@angular/router';
 })
 export class PayFeedbackComponent {
 
-  public mealsService = inject(MealsService)
+  mealsService = inject(MealsService)
 
-  constructor(private router:Router) {}
+  constructor() {}
 
   continueShopping() {
-    this.router.navigate(['/root'])
     this.mealsService.shoppingBasket = []
+    this.mealsService.payAccepted = false;
+    console.log('continue', this.mealsService.payAccepted)
+
   }
 
 }

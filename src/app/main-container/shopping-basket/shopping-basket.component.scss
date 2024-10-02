@@ -1,4 +1,4 @@
-@import './../../styles.scss';
+@import './../../../styles.scss';
 
 // * {
 //     box-sizing: border-box;
@@ -68,3 +68,27 @@ button {
     padding: 16px;
     border-radius: 8px;
 } 
+
+@media (max-width: 900px) {
+    :host {
+        width: unset;
+        position: fixed;
+        // top: 96vh !important;
+        right: 32px;
+        bottom: 0;
+        left: 32px;
+        padding: 0;
+        background-color: aqua;
+        border-top-left-radius: 12px;
+        border-top-right-radius: 12px;
+        filter: unset;
+        transform: translateY(96vh);
+        &:hover {
+            cursor: pointer;
+        }
+    }
+
+    :host.basket-open {
+        transform: translateY(10vh);
+    }
+}

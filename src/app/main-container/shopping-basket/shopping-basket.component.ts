@@ -1,5 +1,5 @@
 import { Component, inject, HostListener, Renderer2, ElementRef } from '@angular/core';
-import { MealsService } from '../meals.service';
+import { MealsService } from '../../meals.service';
 import { CommonModule } from '@angular/common';
 import { MatIconModule } from '@angular/material/icon';
 import { Router } from '@angular/router';
@@ -18,7 +18,7 @@ import { Router } from '@angular/router';
 export class ShoppingBasketComponent {
 
   mealService = inject(MealsService)
-
+  windowWidth: number = 900
   scrollTriggerY: number = 80
   minimumOrderValue: number = 18
   showInfoText: boolean = true
@@ -35,8 +35,10 @@ export class ShoppingBasketComponent {
     }
   }
 
+
   payOrder() {
-    this.router.navigate(['/paymentDialog'])
+    this.mealService.payAccepted = true
+    console.log('pay Order', this.mealService.payAccepted)
   }
 
   

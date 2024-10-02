@@ -1,8 +1,8 @@
 import { Routes } from '@angular/router';
-import { PayFeedbackComponent } from './pay-feedback/pay-feedback.component';
-import { AppComponent } from './app.component';
+// import { PayFeedbackComponent } from './main-container/pay-feedback/pay-feedback.component';
+import { MainContainerComponent } from './main-container/main-container.component';
 
 export const routes: Routes = [
-    { path: 'root', component:AppComponent },
-    { path: 'paymentDialog', component:PayFeedbackComponent }
+    { path: '', component:MainContainerComponent },
+    // { path: 'paymentDialog', component:PayFeedbackComponent },
 ];

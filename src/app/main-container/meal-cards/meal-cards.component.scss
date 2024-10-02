@@ -1,4 +1,4 @@
-@import './../../styles.scss';
+@import './../../../styles.scss';
 
 :host {
     @include display();
@@ -9,11 +9,14 @@
 .meal-card {
     border: 1px solid lightgray;
     border-radius: 12px;
-    margin: 24px;
     filter: $shadow;
     background-color: white;
     position: relative;
+    &:hover {
+        filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.3));
+    }
 }
+
 
 .add-btn {
     background-color: $main-color;
@@ -25,3 +28,4 @@
     top: 0;
     right: 32px;
 }
+

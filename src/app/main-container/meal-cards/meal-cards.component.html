@@ -1,0 +1,11 @@
+<div class="desk-max-width jc-center">
+
+        <div *ngFor="let meal of mealService.meals; let i = index" class="meal-card p-32 mb-32">
+            <h1 class="mb-8">{{ meal.name }}</h1>
+            <h3 class="mb-8">{{ meal.ingridients }}</h3>
+            
+            <button (click)="mealService.addToBasket(meal)" class="mt-16"><h2 class="color-white">{{ meal.price | currency: 'EUR':'symbol':'1.2-2' }}</h2></button>
+        </div>
+
+
+</div>

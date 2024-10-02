@@ -1,0 +1,9 @@
+div {
+    width: calc(100% - 360px);
+}
+
+@media (max-width: 900px) {
+    div {
+        width: 100%
+    }
+}

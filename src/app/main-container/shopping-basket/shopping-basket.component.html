@@ -30,3 +30,4 @@
     <h3 class="f-weight">{{ mealService.calculateTotalCost() + 2 | currency: 'EUR':'symbol':'1.2-2' }}</h3>
 </div>
 <button [disabled]="checkMinOrder()" (click)="payOrder()" [ngClass]="checkDisable()">Pay ({{ mealService.calculateTotalCost() + 2 | currency: 'EUR':'symbol':'1.2-2' }})</button>
+
