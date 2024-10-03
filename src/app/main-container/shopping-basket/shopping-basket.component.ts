@@ -1,8 +1,7 @@
-import { Component, inject, HostListener, Renderer2, ElementRef } from '@angular/core';
+import { Component, inject, HostListener, ViewChild ,Renderer2, ElementRef } from '@angular/core';
 import { MealsService } from '../../meals.service';
 import { CommonModule } from '@angular/common';
 import { MatIconModule } from '@angular/material/icon';
-import { Router } from '@angular/router';
 
 
 @Component({
@@ -17,22 +16,43 @@ import { Router } from '@angular/router';
 })
 export class ShoppingBasketComponent {
 
-  mealService = inject(MealsService)
-  windowWidth: number = 900
-  scrollTriggerY: number = 80
-  minimumOrderValue: number = 18
-  showInfoText: boolean = true
+  @ViewChild('basketContainer') basketContainer!: ElementRef;
+  mealService = inject(MealsService);
+  windowWidth: number = 900;
+  scrollTriggerY: number = 80;
+  minimumOrderValue: number = 18;
+  showInfoText: boolean = true;
+  showBasket = false;
+  hideCounter = false
+  
 
-  constructor(private router: Router, private renderer: Renderer2, private el: ElementRef) {}
+  constructor(private renderer: Renderer2, private el: ElementRef) {}
 
   @HostListener('window:scroll', ['$event'])
   onWindowScroll(event: Event) {
     const scrollY = window.scrollY;
     if (scrollY >= this.scrollTriggerY) {
-      this.renderer.setStyle(this.el.nativeElement, 'top', '0');
+      this.renderer.setStyle(this.basketContainer.nativeElement, 'top', '0');
     } else {
-      this.renderer.setStyle(this.el.nativeElement, 'top', '80px');
+      this.renderer.setStyle(this.basketContainer.nativeElement, 'top', '80px');
     }
+  }
+
+
+  hideBasketCounter():string {
+    return this.mealService.shoppingBasket.length < 1 ? 'd-none' : ''
+  }
+
+
+  toggleBasket() {
+    if (window.innerWidth < this.windowWidth) {
+      this.showBasket = !this.showBasket // switches between true and false
+    }
+  }
+
+
+  openBasket() {
+    return this.showBasket ? 'show-basket' : ''
   }
 
 

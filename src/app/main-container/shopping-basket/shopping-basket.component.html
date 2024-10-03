@@ -1,33 +1,41 @@
-<h1 class="mb-32">Warenkorb</h1>
-
-<div *ngFor="let meal of mealService.shoppingBasket; let index = index" class="meal-boxes mb-16">
-    <div class="default-box w-100 mb-8">
-        <h3>{{ meal.name }}</h3>
-        <h3>{{ mealService.calculateItemCost(meal) | currency: 'EUR':'symbol':'1.2-2' }}</h3>
+<div #basketContainer class="basket-box" [ngClass]="openBasket()">
+    <div class="top-box">
+        <h1 class="mb-32 mt-16" (click)="toggleBasket()">Warenkorb</h1>
+        <div class="mb-32 mt-16 count-circle" [ngClass]="hideBasketCounter()">{{ this.mealService.calculateBasketItems() }}</div>
     </div>
-    <div class="default-box w-100 counter-box">
-        <button class="counter-btn" (click)="mealService.switchCounter(false, index)"><mat-icon>remove</mat-icon></button>
-        <h3>{{ meal.quantity }}</h3>
-        <button class="counter-btn" (click)="mealService.switchCounter(true, index)"><mat-icon>add</mat-icon></button>
+    
+    <div class="scroll-container">
+        <div *ngFor="let meal of mealService.shoppingBasket; let index = index" class="meal-boxes mb-16">
+            <div class="default-box w-100 mb-8">
+                <h3>{{ meal.name }}</h3>
+                <h3>{{ mealService.calculateItemCost(meal) | currency: 'EUR':'symbol':'1.2-2' }}</h3>
+            </div>
+            <div class="default-box w-100 counter-box">
+                <button class="counter-btn" (click)="mealService.switchCounter(false, index)"><mat-icon>remove</mat-icon></button>
+                <h3>{{ meal.quantity }}</h3>
+                <button class="counter-btn" (click)="mealService.switchCounter(true, index)"><mat-icon>add</mat-icon></button>
+            </div>
+        </div>
     </div>
 
-</div>
 
-<div *ngIf="checkMinOrder()" class="default-box mb-16 bg-color">
-    <p>Benötigter Betrag, um den Mindestbestellwert zu erreichen</p>
-    <p class="flex">{{ calculateRequiredAmount() | currency: 'EUR':'symbol':'1.2-2' }}</p>
-</div>
-<div *ngIf="checkMinOrder()" class="default-box mb-16">
-    <p>Leider kannst du noch nicht bestellen. Pizzeria Casa Mia liefert erst ab einem
-        Mindestbestellwert von {{ minimumOrderValue | currency: 'EUR':'symbol':'1.2-2' }} (exkl. Lieferkosten).</p>
-</div>
-<div class="default-box mb-8">
-    <h3>Zwischensumme</h3>
-    <h3>{{ mealService.calculateTotalCost()| currency: 'EUR':'symbol':'1.2-2' }}</h3>
-</div>
-<div class="default-box mb-16">
-    <h3 class="f-weight">Total (incl. delivery cost)</h3>
-    <h3 class="f-weight">{{ mealService.calculateTotalCost() + 2 | currency: 'EUR':'symbol':'1.2-2' }}</h3>
-</div>
-<button [disabled]="checkMinOrder()" (click)="payOrder()" [ngClass]="checkDisable()">Pay ({{ mealService.calculateTotalCost() + 2 | currency: 'EUR':'symbol':'1.2-2' }})</button>
+    <div *ngIf="checkMinOrder()" class="default-box mb-16 bg-color">
+        <p>Benötigter Betrag, um den Mindestbestellwert zu erreichen</p>
+        <p class="flex">{{ calculateRequiredAmount() | currency: 'EUR':'symbol':'1.2-2' }}</p>
+    </div>
+    <div *ngIf="checkMinOrder()" class="default-box mb-16">
+        <p>Leider kannst du noch nicht bestellen. Pizzeria Casa Mia liefert erst ab einem
+            Mindestbestellwert von {{ minimumOrderValue | currency: 'EUR':'symbol':'1.2-2' }} (exkl. Lieferkosten).</p>
+    </div>
+    <div class="default-box mb-8">
+        <h3>Zwischensumme</h3>
+        <h3>{{ mealService.calculateTotalCost()| currency: 'EUR':'symbol':'1.2-2' }}</h3>
+    </div>
+    <div class="default-box mb-16">
+        <h3 class="f-weight">Total (incl. delivery cost)</h3>
+        <h3 class="f-weight">{{ mealService.calculateTotalCost() + 2 | currency: 'EUR':'symbol':'1.2-2' }}</h3>
+    </div>
+    <button [disabled]="checkMinOrder()" (click)="payOrder()" [ngClass]="checkDisable()">Pay ({{ mealService.calculateTotalCost() + 2 | currency: 'EUR':'symbol':'1.2-2' }})</button>
 
+
+</div>

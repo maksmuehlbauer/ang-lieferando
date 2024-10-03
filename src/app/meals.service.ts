@@ -108,6 +108,16 @@ export class MealsService {
     }
 
 
+    calculateBasketItems() {
+        let items = 0
+        for (let i = 0; i < this.shoppingBasket.length; i++) {
+            const meal = this.shoppingBasket[i];
+            items += meal.quantity
+        }
+        return items
+    }
+
+
     deleteFromBasket(index: number) {
         return this.shoppingBasket.splice(index, 1)
     }

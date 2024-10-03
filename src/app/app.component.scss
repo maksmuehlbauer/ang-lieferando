@@ -9,6 +9,20 @@ mat-toolbar {
     padding: 0 40px;
 }
 
+.logo-img {
+    // width: 48px;
+}
+
+@media (max-width: 500px) {
+    .d-none {
+        display: none;
+    }
+
+    mat-toolbar {
+        justify-content: center;
+    }
+
+}
 
 // .main-content {
 //     width: calc(100% - 360px);

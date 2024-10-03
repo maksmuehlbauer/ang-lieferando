@@ -46,3 +46,10 @@
         align-items: center;
     }
 }
+
+@media (max-width: 500px) {
+    .top-img {
+        height: 200px;
+    }
+
+}

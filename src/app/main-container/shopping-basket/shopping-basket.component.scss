@@ -4,7 +4,7 @@
 //     box-sizing: border-box;
 // }
 
-:host {
+.basket-box {
     position: fixed;
     width: calc(360px - 48px);
     top: 80px;
@@ -69,26 +69,82 @@ button {
     border-radius: 8px;
 } 
 
+.count-circle {
+    display: none
+}
+
+.d-none {
+    display: none !important;
+}
+
+.scroll-container {
+    max-height: 44vh;
+    overflow-y: scroll;
+    scrollbar-width: thin;
+    scrollbar-color: lightgray transparent;
+  
+    &::-webkit-scrollbar {
+      width: 6px;
+    }
+  
+    &::-webkit-scrollbar-track {
+      background: transparent;
+    }
+  
+    &::-webkit-scrollbar-thumb {
+      background-color: lightgray;
+      border-radius: 10px;
+    }
+  
+    &::-webkit-scrollbar-thumb:hover {
+      background-color: gray;
+    }
+  }
+
+
+
 @media (max-width: 900px) {
-    :host {
+    .basket-box {
         width: unset;
         position: fixed;
-        // top: 96vh !important;
+        top: -24px !important;
         right: 32px;
         bottom: 0;
         left: 32px;
-        padding: 0;
-        background-color: aqua;
+        padding: 0 64px;
+        background-color: white;
         border-top-left-radius: 12px;
         border-top-right-radius: 12px;
-        filter: unset;
+        border: unset;
+        filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.4));
         transform: translateY(96vh);
         &:hover {
             cursor: pointer;
         }
     }
 
-    :host.basket-open {
-        transform: translateY(10vh);
+    .show-basket {
+        top: -80vh !important;
+    }
+
+    .top-box {
+        @include display();
+        gap: 8px
+    }
+
+    .count-circle {
+        width: 32px;
+        height: 32px;
+        border-radius: 100%;
+        background-color: $main-color;
+        @include display();
+        color: white;
+        font-weight: 600;
+    }
+}
+
+@media (max-width: 500px) {
+    .basket-box {
+        padding: 0 32px;
     }
 }

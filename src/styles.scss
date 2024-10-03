@@ -84,7 +84,6 @@ button {
     border: none;
     padding: 16px 0;
     color: white;
-    // text-transform: uppercase;
     &:hover {
         background-color: $main-color-hover;
         cursor: pointer;
@@ -124,6 +123,25 @@ button {
     .desk-max-width {
         width: 90%;
     }
+}
+
+@media (max-width: 500px) {
+    button {
+        width: 80%;
+    }
+
+    h1 {
+        font-size: 24px;
+    }
+
+    h3 {
+        font-size: 14px
+    }
+
+    button {
+        font-size: 24px;
+    }
+
 }
 
 
